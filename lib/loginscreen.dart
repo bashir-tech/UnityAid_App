@@ -1,10 +1,42 @@
 import 'package:flutter/material.dart';
+import 'MainScreen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return __LoginScreen();
+  }
+}
+class __LoginScreen extends State<LoginScreen> {
+  String? username;
+  String? password;
+  String message = '';
+
+  void checkPassword() {
+    if (username?.isNotEmpty == true && password?.isNotEmpty == true) {
+      if (username == 'bashka' && password == 'bash') {
+        setState(() {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MainScreen()),
+          );
+        });
+      } else {
+        setState(() {
+          message = 'Hatali Giriş. Tekrar Dene';
+        });
+      }
+    } else {
+      setState(() {
+        message = ' Boş birakazsin.';
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 5, 8, 26),
+      backgroundColor: Color(0xFF000116),
       appBar: AppBar(
         title: const Text(
           "Giriş Sayfa",
@@ -39,7 +71,12 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(50),
               ),
-              child: const TextField(
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    username = value;
+                  });
+                },
                 decoration: InputDecoration(
                   hintText: "Email",
                   border: InputBorder.none,
@@ -55,8 +92,13 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(50),
               ),
-              child: const TextField(
-                obscureText: false,
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    password = value;
+                  });
+                },
+                obscureText: true, // Make password hidden
                 decoration: InputDecoration(
                   hintText: "Password",
                   border: InputBorder.none,
@@ -67,23 +109,26 @@ class LoginScreen extends StatelessWidget {
             Container(
               width: 150,
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
-                  );
-                },
+                onPressed: checkPassword,
                 child: Text(
                   'Giriş Yap',
                   style: TextStyle(color: Colors.black87),
                 ),
                 style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 35, vertical: 25),
-                    backgroundColor: Color.fromARGB(255, 235, 234, 234),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    shadowColor: Colors.amber),
+                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 25),
+                  backgroundColor: Color.fromARGB(255, 235, 234, 234),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  shadowColor: Colors.amber,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              message,
+              style: TextStyle(
+                color: Colors.white,
               ),
             ),
           ],

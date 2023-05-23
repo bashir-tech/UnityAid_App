@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 5, 8, 26),
+      backgroundColor: Color(0xFF000116),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -21,19 +21,45 @@ class WelcomeScreen extends StatelessWidget {
               Image.asset(
                 'assets/img/back.png', // Replace with your image path
                 width: 200,
+              
+            
                 colorBlendMode: BlendMode.colorDodge,
               ),
-              const SizedBox(height: 60),
-              const Text(
-                "Find solace and support at your fingertips",
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              const SizedBox(height: 30),
+      Container(
+  decoration: BoxDecoration(
+    border: Border.all(
+   
+      width: 1.0,
+    ),
+  ),
+  child: const Text(
+    "Bir El Uzat, Bir Fark Yarat!",
+    style: TextStyle(
+      fontFamily: 'Poppins',
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.w300,
+      fontSize: 20,
+      height: 1.5,
+        color: Colors.white,
+      shadows: [
+        Shadow(
+          color: Color.fromRGBO(138, 123, 123, 0.247),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+        Shadow(
+          color: Color.fromRGBO(212, 201, 201, 0.247),
+          offset: Offset(0, 4),
+          blurRadius: 4,
+        ),
+      ],
+    ),
+  ),
+),
+
               const SizedBox(height: 50),
-              Row(
+              Row( 
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(

@@ -5,7 +5,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 4, 8, 31),
+      backgroundColor: Color(0xFF000116),
       appBar: AppBar(
         title: const Text(
           "Üye Ol",
