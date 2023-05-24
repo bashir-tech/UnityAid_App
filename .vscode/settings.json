@@ -1,3 +1,9 @@
 {
-    "cmake.sourceDirectory": "C:/udm_flutter_course/loging_page/linux"
+    "cmake.sourceDirectory": "C:/udm_flutter_course/loging_page/linux",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cSpell.words": [
+        "Geocoder",
+        "mainscreen"
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }

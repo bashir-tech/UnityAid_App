@@ -1,32 +1,36 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'signupscreen.dart';
-import 'welcomescreen.dart';
-import 'package:google_fonts/src/asset_manifest.dart';
-import 'package:google_fonts/src/asset_manifest.dart';
+import 'pages/loginscreen.dart';
+import 'pages/mainscreen.dart';
+import 'pages/signupscreen.dart';
+import 'pages/welcomescreen.dart';
+import 'utils/firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(LoginApp());
 }
 
 class LoginApp extends StatelessWidget {
+  const LoginApp({Key? key});
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     
-      home:   WelcomeScreen(),
-    );
-  }
-}
+      routes: {
+        "/loginscreen": (context) => LoginScreen(),
+        "/mainscreen": (context) => MainScreen(),
 
-class deneme extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return const MaterialApp(
-      home: Scaffold(
-        body: Text("data"),
-      ),
+        "/MainScreen": (context) => MainScreen(), // Add this line
+        "/signupscreen": (context) => SignUpScreen(),
+        "/welcomescreen": (context) => WelcomeScreen(),
+      },
+      home: WelcomeScreen(),
     );
   }
 }

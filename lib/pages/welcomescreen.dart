@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './LoginScreen.dart';
 import 'signupscreen.dart';
-import 'LoginScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   WelcomeScreen({super.key});
@@ -21,45 +21,42 @@ class WelcomeScreen extends StatelessWidget {
               Image.asset(
                 'assets/img/back.png', // Replace with your image path
                 width: 200,
-              
-            
+
                 colorBlendMode: BlendMode.colorDodge,
               ),
               const SizedBox(height: 30),
-      Container(
-  decoration: BoxDecoration(
-    border: Border.all(
-   
-      width: 1.0,
-    ),
-  ),
-  child: const Text(
-    "Bir El Uzat, Bir Fark Yarat!",
-    style: TextStyle(
-      fontFamily: 'Poppins',
-      fontStyle: FontStyle.italic,
-      fontWeight: FontWeight.w300,
-      fontSize: 20,
-      height: 1.5,
-        color: Colors.white,
-      shadows: [
-        Shadow(
-          color: Color.fromRGBO(138, 123, 123, 0.247),
-          offset: Offset(0, 4),
-          blurRadius: 4,
-        ),
-        Shadow(
-          color: Color.fromRGBO(212, 201, 201, 0.247),
-          offset: Offset(0, 4),
-          blurRadius: 4,
-        ),
-      ],
-    ),
-  ),
-),
-
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1.0,
+                  ),
+                ),
+                child: const Text(
+                  "Bir El Uzat, Bir Fark Yarat!",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 20,
+                    height: 1.5,
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(
+                        color: Color.fromRGBO(138, 123, 123, 0.247),
+                        offset: Offset(0, 4),
+                        blurRadius: 4,
+                      ),
+                      Shadow(
+                        color: Color.fromRGBO(212, 201, 201, 0.247),
+                        offset: Offset(0, 4),
+                        blurRadius: 4,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               const SizedBox(height: 50),
-              Row( 
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
@@ -121,6 +118,7 @@ class WelcomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
+                      height: 60,
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
@@ -131,12 +129,12 @@ class WelcomeScreen extends StatelessWidget {
                           );
                         },
                         child: const Text(
-                          'Üye  Ol',
+                          'Sign  Up',
                           style: TextStyle(color: Colors.black87),
                         ),
                         style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 35, vertical: 25),
+                                horizontal: 10,),
                             backgroundColor: Color.fromARGB(255, 235, 234, 234),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
@@ -145,6 +143,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
+                    height: 60,
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
@@ -155,12 +154,12 @@ class WelcomeScreen extends StatelessWidget {
                           );
                         },
                         child: Text(
-                          'Giriş Yap',
+                          'Sign In',
                           style: TextStyle(color: Colors.black87),
                         ),
                         style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 35, vertical: 25),
+                                horizontal: 10,),
                             backgroundColor: Color.fromARGB(255, 235, 234, 234),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
@@ -178,4 +177,6 @@ class WelcomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  
 }
