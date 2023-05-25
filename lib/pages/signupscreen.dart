@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../service/autho_method.dart';
+import 'mainscreen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -135,7 +136,8 @@ class _signUpScreenState extends State<SignUpScreen> {
             tel: _telController.text,
             adress: _addressController.text,
           );
-          print(res);
+          Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => MainScreen()));
         },
         child: Text(
           'Kaydet',
