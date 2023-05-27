@@ -4,7 +4,7 @@ import './LoginScreen.dart';
 import 'signupscreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  WelcomeScreen({super.key});
+  WelcomeScreen({key});
 
   bool showAboutMe = false;
 
@@ -63,7 +63,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       // Add functteionality for the "About" icon
                     },
-                    child: const Column(
+                    child: Column(
                       children: [
                         Icon(
                           Icons.info,
@@ -80,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       // Add functionality for the "Menu" icon
                     },
-                    child: const Column(
+                    child: Column(
                       children: [
                         Icon(
                           Icons.menu,
@@ -97,7 +97,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       // Add functionality for the "Privacy" icon
                     },
-                    child: const Column(
+                    child: Column(
                       children: [
                         Icon(
                           Icons.privacy_tip,
@@ -134,7 +134,8 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                         style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 10,),
+                              horizontal: 10,
+                            ),
                             backgroundColor: Color.fromARGB(255, 235, 234, 234),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
@@ -143,7 +144,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                    height: 60,
+                      height: 60,
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {
@@ -159,7 +160,8 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                         style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 10,),
+                              horizontal: 10,
+                            ),
                             backgroundColor: Color.fromARGB(255, 235, 234, 234),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
@@ -177,6 +179,4 @@ class WelcomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  
 }

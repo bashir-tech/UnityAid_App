@@ -1,16 +1,9 @@
-
-
 import 'package:flutter/material.dart';
-
-
-
-
-
 
 class CustomInputDecoration extends StatelessWidget {
   final String hintText;
 
-  const CustomInputDecoration({required this.hintText,super.key});
+  const CustomInputDecoration({required this.hintText, key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +22,8 @@ class CustomInputDecoration extends StatelessWidget {
           ),
         ),
       ),
-      child: const SizedBox(), // Add an empty child widget to satisfy the InputDecorator requirement
+      child:
+          const SizedBox(), // Add an empty child widget to satisfy the InputDecorator requirement
     );
   }
 }

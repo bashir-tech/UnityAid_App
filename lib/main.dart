@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:loging_page/models/myLocation.dart';
+import 'package:loging_page/models/myProfile.dart';
 
 import 'pages/loginscreen.dart';
 import 'pages/mainscreen.dart';
@@ -29,6 +31,8 @@ class LoginApp extends StatelessWidget {
         "/MainScreen": (context) => MainScreen(), // Add this line
         "/signupscreen": (context) => SignUpScreen(),
         "/welcomescreen": (context) => WelcomeScreen(),
+        "/myLocation": (context) => MyLocation(),
+        "/myProfile": (context) => MyProfile(),
       },
       home: WelcomeScreen(),
     );
