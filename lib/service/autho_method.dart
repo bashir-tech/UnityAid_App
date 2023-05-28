@@ -1,9 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../models/user.dart';
+
 class Authomethod {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  Future<Users> getUserDetails() async {
+    User currentUser = _auth.currentUser!;
+    DocumentSnapshot snap =
+        await _firestore.collection('users').doc(currentUser.uid).get();
+    return Users.fromSnap(snap);
+  }
+
   //signupp
   Future<String> signUpUser({
     required String fullName,
@@ -20,18 +30,24 @@ class Authomethod {
           tel.isNotEmpty ||
           adress.isNotEmpty) {
         //register
+
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
         // add user to the database
-        await _firestore.collection('users').doc(cred.user!.uid).set({
-          'fullname': fullName,
-          'email': email,
-          'password': password,
-          'tel': tel,
-          'adress': adress,
-        });
 
         // adding user in our database
+        Users user = Users(
+          fullName: fullName,
+          email: email,
+          password: password,
+          tel: tel,
+          adress: adress,
+        );
+        await _firestore
+            .collection('users')
+            .doc(cred.user!.uid)
+            .set(user.toJson());
+
         await _firestore.collection("users").doc(cred.user!.uid);
 
         res = "success";

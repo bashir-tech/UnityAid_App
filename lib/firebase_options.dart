@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCtRFBfqgKyf5cXgGvX6OVPy1I_JByPpfg',
-    appId: '1:533485109836:web:933b967e59e62ccfd76ae9',
-    messagingSenderId: '533485109836',
-    projectId: 'unityaid-dc259',
-    authDomain: 'unityaid-dc259.firebaseapp.com',
-    storageBucket: 'unityaid-dc259.appspot.com',
-    measurementId: 'G-WMC9028F46',
+    apiKey: 'AIzaSyA0ZIdeq2TWIf3GKzeuXAgvlQEMzx7_M-Q',
+    appId: '1:296271131741:web:3358df78994d6d106109b4',
+    messagingSenderId: '296271131741',
+    projectId: 'unityapp-63516',
+    authDomain: 'unityapp-63516.firebaseapp.com',
+    storageBucket: 'unityapp-63516.appspot.com',
+    measurementId: 'G-5V2BL7FK46',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDR7OQ7z2dxKEFBxVOY1vk9CV3K_mXjya4',
-    appId: '1:533485109836:android:7ea4a305391a1007d76ae9',
-    messagingSenderId: '533485109836',
-    projectId: 'unityaid-dc259',
-    storageBucket: 'unityaid-dc259.appspot.com',
+    apiKey: 'AIzaSyBhAB3fkHVDb1k83_sTK5kwZHSxFYy4WnQ',
+    appId: '1:296271131741:android:8891b1565f2b91566109b4',
+    messagingSenderId: '296271131741',
+    projectId: 'unityapp-63516',
+    storageBucket: 'unityapp-63516.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCE-4MPpuKOWEc0GQnU0_GBndBkUcjUmk0',
-    appId: '1:533485109836:ios:fad77858c6c6de41d76ae9',
-    messagingSenderId: '533485109836',
-    projectId: 'unityaid-dc259',
-    storageBucket: 'unityaid-dc259.appspot.com',
+    apiKey: 'AIzaSyAPzsUrMdhK3sQIDE6i2W-6WtAH1vbAzjo',
+    appId: '1:296271131741:ios:cb8f12fd3bb319726109b4',
+    messagingSenderId: '296271131741',
+    projectId: 'unityapp-63516',
+    storageBucket: 'unityapp-63516.appspot.com',
     iosBundleId: 'com.example.logingPage',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCE-4MPpuKOWEc0GQnU0_GBndBkUcjUmk0',
-    appId: '1:533485109836:ios:e8dbd353b68e53f8d76ae9',
-    messagingSenderId: '533485109836',
-    projectId: 'unityaid-dc259',
-    storageBucket: 'unityaid-dc259.appspot.com',
+    apiKey: 'AIzaSyAPzsUrMdhK3sQIDE6i2W-6WtAH1vbAzjo',
+    appId: '1:296271131741:ios:93c77462f42beacc6109b4',
+    messagingSenderId: '296271131741',
+    projectId: 'unityapp-63516',
+    storageBucket: 'unityapp-63516.appspot.com',
     iosBundleId: 'com.example.logingPage.RunnerTests',
   );
 }

@@ -3,7 +3,7 @@ import 'package:loging_page/models/myLocation.dart';
 
 import '../models/myProfile.dart';
 import '../utils/custombutton.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,11 @@ class MainScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MyProfile()),
+                        MaterialPageRoute(builder: (context) =>
+                         MyProfile(
+                          //  uid: FirebaseAuth.instance.currentUser!.uid,
+                          
+                          )),
                       );
                     },
                   ),

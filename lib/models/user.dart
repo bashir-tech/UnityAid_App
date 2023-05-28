@@ -1,37 +1,42 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class User {
+class Users {
   final String fullName;
   final String email;
-  final String password;
+ final String password;
+
   final String tel;
   final String adress;
 
-  const User({
+  const Users({
     required this.fullName,
     required this.email,
-    required this.password,
+     required this.password,
     required this.tel,
     required this.adress,
   });
+  
 
-  static User fromSnap(DocumentSnapshot snap) {
+  static Users fromSnap(DocumentSnapshot snap) {
     var snapshot = snap.data() as Map<String, dynamic>;
 
-    return User (
+    return Users (
       fullName: snapshot["fullName"],
       email: snapshot["email"],
-      password: snapshot["password"],
+        password: snapshot["password"],
       tel: snapshot["tel"],
       adress: snapshot["adress"],
     );
   }
 
+
   Map<String, dynamic> toJson() => {
-        "username": fullName,
+        "fullName": fullName,
         "email": email,
-        "password": password,
         "tel": tel,
         "adress": adress,
       };
 }
+
+

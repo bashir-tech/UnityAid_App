@@ -92,6 +92,7 @@ class _signUpScreenState extends State<SignUpScreen> {
     return TextFormField(
         style: const TextStyle(color: Colors.white),
         controller: _fullnameController,
+        
         decoration: customInputDecoration("FullName"));
   }
 
