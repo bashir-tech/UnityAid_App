@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  "Bir El Uzat, Bir Fark Yarat!",
+                  "Bir El Uzat, Birr Fark Yarat!",
                   style: TextStyle(
                     fontFamily: 'Poppins',
                     fontStyle: FontStyle.italic,

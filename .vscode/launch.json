@@ -5,30 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Edge",
-            "request": "launch",
-            "type": "msedge",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Flutter: Attach to Device",
-            "type": "dart",
-            "request": "attach"
-        },
-        {
-            "name": "loging_page",
+            "name": "UnityAid_App",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "loging_page (profile mode)",
+            "name": "UnityAid_App (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "loging_page (release mode)",
+            "name": "UnityAid_App (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
