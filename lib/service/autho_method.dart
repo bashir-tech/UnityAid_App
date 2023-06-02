@@ -21,6 +21,8 @@ class Authomethod {
     required String password,
     required String tel,
     required String adress,
+    required double lat,
+    required double long,
   }) async {
     String res = "Error occured";
     try {
@@ -28,7 +30,7 @@ class Authomethod {
           email.isNotEmpty ||
           password.isNotEmpty ||
           tel.isNotEmpty ||
-          adress.isNotEmpty) {
+          adress.isEmpty) {
         //register
 
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
@@ -37,12 +39,14 @@ class Authomethod {
 
         // adding user in our database
         Users user = Users(
-          fullName: fullName,
-          email: email,
-          password: password,
-          tel: tel,
-          adress: adress,
-        );
+            fullName: fullName,
+            email: email,
+            password: password,
+            tel: tel,
+            adress: adress,
+            lat: lat,
+            long: long);
+
         await _firestore
             .collection('users')
             .doc(cred.user!.uid)
@@ -76,7 +80,7 @@ class Authomethod {
   }) async {
     String res = "Some error Occurred";
     try {
-      if (email.isNotEmpty || password.isNotEmpty) {
+      if (email.isNotEmpty && password.isNotEmpty) {
         // logging in user with email and password
         await _auth.signInWithEmailAndPassword(
           email: email,
@@ -91,4 +95,51 @@ class Authomethod {
     }
     return res;
   }
+
+  Future<String> updateUser(
+      {required String fullName,
+      required String email,
+      required String password,
+      required String tel,
+      required String adress,
+      required double lat,
+      required double long}) async {
+    String res = "Error occured";
+    try {
+      if (fullName.isNotEmpty ||
+          email.isNotEmpty ||
+          password.isNotEmpty ||
+          tel.isNotEmpty ||
+          adress.isNotEmpty) {
+        //register
+
+        // UserCredential cred = await _auth.createUserWithEmailAndPassword(
+        //     email: email, password: password);
+        // // add user to the database
+
+        // adding user in our database
+        Users user = Users(
+            fullName: fullName,
+            email: email,
+            password: password,
+            tel: tel,
+            adress: adress,
+            lat: lat,
+            long: long);
+        await _firestore
+            .collection('users')
+            .doc(FirebaseAuth.instance.currentUser!.uid)
+            .update(user.toJson());
+
+        await _firestore
+            .collection("users")
+            .doc(FirebaseAuth.instance.currentUser!.uid);
+
+        res = "success";
+      }
+    } catch (error) {
+      res = error.toString();
+    }
+    return res;
+}
 }

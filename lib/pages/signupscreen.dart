@@ -1,7 +1,12 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import '../service/autho_method.dart';
 import 'mainscreen.dart';
+
+
+
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -19,6 +24,8 @@ class _signUpScreenState extends State<SignUpScreen> {
   final TextEditingController _telController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
 
+  final double _latController=0 ;
+  final double _longController=0 ;
   @override
   void dispose() {
     super.dispose();
@@ -27,6 +34,8 @@ class _signUpScreenState extends State<SignUpScreen> {
     _passwordController.dispose();
     _telController.dispose();
     _addressController.dispose();
+    _latController;
+    _longController;
   }
 
   @override
@@ -136,6 +145,9 @@ class _signUpScreenState extends State<SignUpScreen> {
             password: _passwordController.text,
             tel: _telController.text,
             adress: _addressController.text,
+             lat: _latController,
+             long: _longController
+           
           );
           Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => MainScreen()));

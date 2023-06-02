@@ -63,7 +63,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       // Add functteionality for the "About" icon
                     },
-                    child: Column(
+                    child: const Column(
                       children: [
                         Icon(
                           Icons.info,
@@ -80,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       // Add functionality for the "Menu" icon
                     },
-                    child: Column(
+                    child: const Column(
                       children: [
                         Icon(
                           Icons.menu,
@@ -97,7 +97,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       // Add functionality for the "Privacy" icon
                     },
-                    child: Column(
+                    child: const Column(
                       children: [
                         Icon(
                           Icons.privacy_tip,
